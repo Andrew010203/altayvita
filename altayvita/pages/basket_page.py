@@ -15,10 +15,6 @@ from base.base_class import Base
 class Basket_page(Base):
     """ Класс содержащий локаторы и методы для страницы корзина"""
 
-    # def __init__(self, driver):
-    #     super().__init__(driver)
-    #     self.driver = driver
-
     # Локаторы
     main_word = '//h1[contains(text(),"Корзина заказа")]'
     price_in_basket = '//span[@class="js-item-total"]'
@@ -71,17 +67,17 @@ class Basket_page(Base):
             self.get_current_url()
             self.assert_word(self.get_main_word(), "Корзина заказа")
             time.sleep(2)
-            self.assert_word(self.get_price_in_basket(), "1 422 ₽")
-            self.assert_word(self.get_total_cost(), "1 422 ₽")
+            self.assert_word(self.get_price_in_basket(), "1 660 ₽")
+            self.assert_word(self.get_total_cost(), "1 660 ₽")
             self.click_minus_button()
             time.sleep(2)
-            self.assert_word(self.get_price_in_basket(), "711 ₽")
-            self.assert_word(self.get_total_cost(), "711 ₽")
+            self.assert_word(self.get_price_in_basket(), "830 ₽")
+            self.assert_word(self.get_total_cost(), "830 ₽")
             time.sleep(2)
             self.click_plus_button()
             time.sleep(2)
-            self.assert_word(self.get_price_in_basket(), "1 422 ₽")
-            self.assert_word(self.get_total_cost(), "1 422 ₽")
+            self.assert_word(self.get_price_in_basket(), "1 660 ₽")
+            self.assert_word(self.get_total_cost(), "1 660 ₽")
             self.click_go_to_checkout()
 
 
