@@ -15,11 +15,6 @@ from base.base_class import Base
 
 class Deliveri_to_country_page(Base):
     """ Класс содержащий локаторы и методы для страницы выбора города для отправки товара"""
-    # url = "https://www."
-
-    # def __init__(self, driver):
-    #     super().__init__(driver)
-    #     self.driver = driver
 
     # Локаторы
 
