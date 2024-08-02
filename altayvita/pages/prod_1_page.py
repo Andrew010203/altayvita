@@ -12,10 +12,6 @@ from base.base_class import Base
 class Prod_1_page(Base):
     """ Класс содержащий локаторы и методы для страницы товара"""
 
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
-
     # Локаторы
 
     add_basket = '(//button[@class="main-btn blue"])[1]'
