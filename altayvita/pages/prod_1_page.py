@@ -23,7 +23,7 @@ class Prod_1_page(Base):
     click_left = '//div[@class="ug-slider-control ug-arrow-left ug-skin-alexis"]'
     plus_button = '(//button[@class="more js-plus_2_0"])[1]'
     minus_button = '(//button[@class="less js-minus_2_0"])[1]'
-    amount_prod = '(//span[@class="count  js-count-number active"])[1]'
+    amount_prod = '(//span[@class="num js-quantity input_quantity_a7ec149f4aef27ebef8efca5ede8a0d2"])[1]'
     sum_price_basket = '//span[@class="basket-price js-total"]'
     up_radio_btn = '//*[@data-product-id-subtype="699"]'
     price_up_radio_btn = '//span[@class="sum js-product-price"]'
@@ -130,19 +130,22 @@ class Prod_1_page(Base):
             print(value_amount_prod)
             self.assert_word(self.get_amount_prod(), '1')
             time.sleep(2)
-            self.assert_word(self.get_sum_price_basket(), '1 422 ₽')
+            self.assert_word(self.get_sum_price_basket(), '1 660 ₽')
             self.click_plus_button()
             time.sleep(2)
+            value_amount_prod = self.get_amount_prod().text
+            print(value_amount_prod)
+            time.sleep(2)
             self.assert_word(self.get_amount_prod(), '3')
-            self.assert_word(self.get_sum_price_basket(), '2 133 ₽')
+            self.assert_word(self.get_sum_price_basket(), '2 490 ₽')
             self.click_minus_button()
             time.sleep(2)
-            self.assert_word(self.get_sum_price_basket(), '1 422 ₽')
+            self.assert_word(self.get_sum_price_basket(), '1 660 ₽')
             self.assert_word(self.get_amount_prod(), '2')
             time.sleep(2)
             self.click_up_radio_btn()
             time.sleep(2)
-            self.assert_word(self.get_price_up_radio_btn(), '513')
+            self.assert_word(self.get_price_up_radio_btn(), '600')
             self.click_down_radio_btn()
             self.click_go_to_basket()
             self.click_checkout_button()
